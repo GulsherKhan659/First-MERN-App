@@ -1,0 +1,11 @@
+{
+  "name": "todoappserver",
+  "version": "1.0.0",
+  "description": "MERN STACK 1 APP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gulsher Khan",
+  "license": "ISC"
+}

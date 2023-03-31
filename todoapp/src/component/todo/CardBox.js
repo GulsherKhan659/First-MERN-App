@@ -38,6 +38,7 @@ function CardBox({ id, editTitle, editDesc, editDate, delRec, uptRec }) {
                         <label className='p-1'>Title</label>
                         <input type='text' value={title} onChange={(e) => setTitle(e.target.value)} className='form-control' />
                     </div>
+
                     <div className='mx-3 my-1 form-group'>
                         <label className='p-1'>Description</label>
                         <textarea rows={5} type='text' value={description} onChange={(e) => setDesc(e.target.value)} className='form-control' ></textarea>

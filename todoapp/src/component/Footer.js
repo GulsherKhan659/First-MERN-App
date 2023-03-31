@@ -1,4 +1,3 @@
-import React, { useContext } from 'react'
 
 function Footer() {
     return (

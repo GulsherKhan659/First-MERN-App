@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Header from './component/Header'
 import Footer from './component/Footer'
 import FormBox from './component/todo/FormBox'
 import CardBox from './component/todo/CardBox'
+import ToDoContext from './datahandle/todoContext'
 
 function ToDoApp() {
+
+    const todoCxt = useContext(ToDoContext)
+    const AllTODOs = () => todoCxt.allToDo.map((ToDo, idx) => <CardBox key={idx} id={ToDo._id} delRec={todoCxt.deleteHandle} uptRec={todoCxt.updateHandle} editDate={ToDo.date} editTitle={ToDo.title} editDesc={ToDo.description} />)
     return (
         <> <Header />
             <div className='container'>
@@ -15,7 +19,7 @@ function ToDoApp() {
                     MY TO DO LIST
                 </div>
                 <div className='row'>
-                    <CardBox />
+                    <AllTODOs />
                 </div>
 
             </div>

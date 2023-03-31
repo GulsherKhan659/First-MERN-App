@@ -1,19 +1,22 @@
 const Model = require('../model/todo')
 
+
 exports.getAllToDo = async (req, res) => {
     try {
         const ToDo = await Model.ToDoModel.find()
 
-        console.log(ToDo)
 
+        console.log(ToDo)
+        res.status(200).send(ToDo)
 
     } catch (error) {
         console.log('error', error)
+        res.status(401)
 
 
     }
 
-    res.send("get")
+
 }
 
 exports.addToDo = async (req, res) => {
@@ -22,14 +25,14 @@ exports.addToDo = async (req, res) => {
         ToDo.save()
         console.log(req.body)
 
+        res.status(201).send("add")
 
     } catch (error) {
         console.log('error', error)
-
+        res.status(401)
 
     }
 
-    res.send("add")
 }
 exports.deleteToDo = async (req, res) => {
 
@@ -39,13 +42,14 @@ exports.deleteToDo = async (req, res) => {
 
         console.log(ToDo)
 
+        res.status(200).send("delete")
 
     } catch (error) {
         console.log('error', error)
-
+        res.status(401)
 
     }
-    res.send(req.params.id)
+
 }
 exports.updateToDo = async (req, res) => {
     try {
@@ -53,13 +57,14 @@ exports.updateToDo = async (req, res) => {
         console.log(req.body)
 
         console.log(ToDo)
+        res.status(201).send("Edit")
+
 
 
 
     } catch (error) {
         console.log('error', error)
-
+        res.status(401)
 
     }
-    res.send("update")
 }
